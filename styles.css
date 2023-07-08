@@ -1,18 +1,19 @@
-.grid{
+#grid{
     display: flex;
     gap:0px;
     border-color: black;
     align-items: center;
     justify-content: center;
     margin: 10px;
+    background-color: white;
 }
 
 .row {
     margin: 2px;
-    background: gold;
+    background: white;
     text-align: center;
     width: 100%;
-    height: 100px;
+    height: 50px;
 }
 
 
