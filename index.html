@@ -9,14 +9,17 @@
 </head>
 <body>
     <div class = "header">
+        <div class = "left-header">
+            <button id = "btn-adjust">Adjust Grid</button>
+            <button id = "btn-reset">Reset Board</button>
+        </div>
         <h1>Etch-a-Sketch</h1>
-        <button id = "btn-adjust">Adjust Grid</button>
-        <button id = "btn-reset">Reset Board</button>
         <div class = "right-header">
+            <label for="colorpicker"></label>
+            <input type="color" id="colorpicker" name = "colorpicker" value="#0000000">
             <button id = "btn-random">Randomize Paint</button>
             <button id = "btn-paint">Paint</button>
-            <label for="colorpicker">Color Picker:</label>
-            <input type="color" id="colorpicker" value="#0000ff">
+            <!--<button id = "btn-fill">Fill</button> --->
             <button id = "btn-erase">Erase</button>
         </div>
     </div>

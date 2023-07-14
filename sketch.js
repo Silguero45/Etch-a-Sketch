@@ -2,7 +2,8 @@ window.addEventListener("DOMContentLoaded", addElement(16,16));
 
 document.querySelectorAll(".row").forEach(function(item){
     item.addEventListener("click", e => {
-        e.target.style.backgroundColor = "gold";
+        e.target.style.backgroundColor = window.getComputedStyle((
+            document.getElementById("grid")), null).getPropertyValue('background-color');
     });
 });
 
@@ -18,7 +19,7 @@ document.getElementById("btn-reset").addEventListener("click", reset);
 document.getElementById("btn-paint").addEventListener("click", paint);
 document.getElementById("btn-random").addEventListener("click", random);
 document.getElementById("btn-erase").addEventListener("click", erase);
-document.getElementById("colorpicker").addEventListener("change", )
+document.getElementById("btn-fill").addEventListener("click", fill);
 
 function addElement(rows,columns){
     
@@ -26,15 +27,14 @@ function addElement(rows,columns){
     grid.id = 'grid';
 
     for (var i = 0; i < columns; ++i) {
-        var column = document.createElement('div'); // create column
+        var column = document.createElement('div'); 
         column.className = 'column';
         for (var j = 0; j < rows; ++j) {
-            var row = document.createElement('div'); // create row
+            var row = document.createElement('div'); 
             row.className = 'row';
-            row.textContent = i + '-' +j; // set text
-            column.appendChild(row); // append row in column
+            column.appendChild(row); 
         }
-        grid.appendChild(column); // append column inside grid
+        grid.appendChild(column);
     }
     document.body.appendChild(grid);
 };
@@ -62,12 +62,11 @@ function reset(){
 function paint(){
     document.querySelectorAll(".row").forEach(function(item){
         item.addEventListener("mouseover", e => {
-            e.target.style.backgroundColor = document.querySelector("#colorpicker").addEventListener("change",color => {
-                return color.target.value;
+            e.target.style.backgroundColor = document.getElementById("colorpicker").value;
              });
         });
-    });
-}
+    };
+
 
 function random(){
     document.querySelectorAll(".row").forEach(function(item){
@@ -85,3 +84,9 @@ function erase(){
         });
     });
 }
+
+function fill(){
+    document.querySelectorAll(".row").addEventListener("click", e => {
+        e.target.style.backgroundColor = document.getElementById("colorpicker").value;
+         });
+    }
